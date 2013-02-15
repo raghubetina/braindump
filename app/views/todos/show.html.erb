@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Parent:</b>
+  <%= @todo.parent_id %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @todo.position %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @todo.description %>
+</p>
+
+<p>
+  <b>Due date:</b>
+  <%= @todo.due_date %>
+</p>
+
+<p>
+  <b>Scheduled at:</b>
+  <%= @todo.scheduled_at %>
+</p>
+
+<p>
+  <b>Urgent:</b>
+  <%= @todo.urgent %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @todo.notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_todo_path(@todo) %> |
+<%= link_to 'Back', todos_path %>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  parent_id: 1
+  position: 1
+  description: MyString
+  due_date: 2013-02-14 19:30:03
+  scheduled_at: 2013-02-14 19:30:03
+  urgent: false
+  notes: MyText
+
+two:
+  parent_id: 1
+  position: 1
+  description: MyString
+  due_date: 2013-02-14 19:30:03
+  scheduled_at: 2013-02-14 19:30:03
+  urgent: false
+  notes: MyText
