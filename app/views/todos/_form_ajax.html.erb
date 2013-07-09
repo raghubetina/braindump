@@ -1,0 +1,6 @@
+<li id="<%= dom_id todo %>_form">
+  <%= form_for todo, remote: true do |f| %>
+    <%= f.hidden_field :parent_id %>
+    <%= f.text_field :description, class: "span4" %>
+  <% end %>
+</li>

@@ -1,0 +1,4 @@
+$("#parent_<%= @todo.parent.id %>_children #new_todo_form").before("<%= j(render 'todo', todo: @todo) %>");
+$("#<%= dom_id @todo %>").hide();
+$("#<%= dom_id @todo %>").slideDown();
+$("#parent_<%= @todo.parent.id %> #todo_description").val("");

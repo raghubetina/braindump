@@ -1,0 +1,9 @@
+<li id="<%= dom_id todo %>" class="todo">
+  <label class="checkbox" id="<%= todo.id %>">
+    <input type="checkbox"> <%= todo.description %>
+    <%= link_to 'Delete', todo, method: 'delete', remote: true %>
+    <%= link_to 'Edit', edit_todo_url(todo), remote: true %>
+  </label>
+  <ul>
+  </ul>
+</li>

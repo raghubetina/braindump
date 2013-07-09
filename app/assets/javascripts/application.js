@@ -11,5 +11,21 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function() {
+
+  $('.todo').draggable({
+    helper: 'clone',
+    opacity: 0.7
+  });
+
+  $('.todo').droppable({
+    drop: function(event, ui) {
+      $(this).find('ul').first().append(ui.draggable.clone());
+      $(ui.draggable).remove();
+    }
+  });
+});

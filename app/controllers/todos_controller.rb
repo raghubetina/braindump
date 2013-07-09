@@ -2,7 +2,7 @@ class TodosController < ApplicationController
   # GET /todos
   # GET /todos.json
   def index
-    @todos = Todo.all
+    @projects = Todo.projects
 
     respond_to do |format|
       format.html # index.html.erb
@@ -35,6 +35,11 @@ class TodosController < ApplicationController
   # GET /todos/1/edit
   def edit
     @todo = Todo.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # POST /todos
@@ -44,7 +49,8 @@ class TodosController < ApplicationController
 
     respond_to do |format|
       if @todo.save
-        format.html { redirect_to @todo, notice: 'Todo was successfully created.' }
+        format.js
+        format.html { redirect_to root_url }
         format.json { render json: @todo, status: :created, location: @todo }
       else
         format.html { render action: "new" }
@@ -61,6 +67,7 @@ class TodosController < ApplicationController
     respond_to do |format|
       if @todo.update_attributes(params[:todo])
         format.html { redirect_to @todo, notice: 'Todo was successfully updated.' }
+        format.js
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -77,6 +84,7 @@ class TodosController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to todos_url }
+      format.js
       format.json { head :no_content }
     end
   end
